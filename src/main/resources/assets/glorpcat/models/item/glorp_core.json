@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "glorpcat:item/glorp_core"
+    "layer0": "damrongmcsglorpcatmod:item/glorp_core"
   }
 }
