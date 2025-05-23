@@ -74,7 +74,7 @@ public class GlorpCat
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.MYSTERIOUSFUNGALTREAT);
+            event.accept(ModBlocks.MYSTERIOUSFUNGALTREAT);
             event.accept(ModItems.GLORPCORE);
         }
     }
