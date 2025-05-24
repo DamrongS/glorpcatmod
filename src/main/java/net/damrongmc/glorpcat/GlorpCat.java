@@ -1,9 +1,13 @@
 package net.damrongmc.glorpcat;
 
+import net.damrongmc.entity.ModEntities;
+import net.damrongmc.entity.client.GlorpRenderer;
 import net.damrongmc.glorpcat.block.ModBlocks;
 import net.damrongmc.glorpcat.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -59,6 +63,7 @@ public class GlorpCat
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -80,6 +85,10 @@ public class GlorpCat
             event.accept(ModBlocks.MYSTERIOUS_FUNGAL_TREAT);
             event.accept(ModItems.GLORPCORE);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.GLORP_SPAWN_EGG);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -94,9 +103,8 @@ public class GlorpCat
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.GLORP.get(), GlorpRenderer::new);
         }
     }
 }

@@ -1,0 +1,9 @@
+{
+  "block.damrongmcsglorpcatmod.mysterious_fungal_treat" : "Mystisk Svampegodbid",
+  "item.damrongmcsglorpcatmod.mysterious_fungal_treat" : "Mystisk Svampegodbid",
+  "item.damrongmcsglorpcatmod.glorp_core" : "Glorp Kerne",
+
+  "item.damrongmcsglorpcatmod.glorp_spawn_egg" : "Glorp Fremkaldnings Æg",
+
+  "entity.mccourse.glorp": "Glorp"
+}

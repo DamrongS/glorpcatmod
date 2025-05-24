@@ -1,5 +1,9 @@
 {
   "block.damrongmcsglorpcatmod.mysterious_fungal_treat" : "Mysterious Fungal Treat",
   "item.damrongmcsglorpcatmod.mysterious_fungal_treat" : "Mysterious Fungal Treat",
-  "item.damrongmcsglorpcatmod.glorp_core" : "Glorp Core"
+  "item.damrongmcsglorpcatmod.glorp_core" : "Glorp Core",
+
+  "item.damrongmcsglorpcatmod.glorp_spawn_egg" : "Glorp Spawn Egg",
+
+  "entity.mccourse.glorp": "Glorp"
 }

@@ -25,13 +25,14 @@ public class MysteriousFungalTreatBlock extends Block {
         return new ItemStack(ModItems.MYSTERIOUS_FUNGAL_TREAT.get());
     }
 
-    protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        if (state.is(Blocks.DIRT)) {
-            if (level instanceof LevelReader levelReader) {
-                Holder<Biome> biomeHolder = levelReader.getBiome(pos);
-                return biomeHolder.is(BiomeTags.HAS_SWAMP_HUT); // or your desired swamp tag
-            }
-        }
-        return false;
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
+        BlockPos below = pos.below();
+        BlockState belowState = worldIn.getBlockState(below);
+        return belowState.is(Blocks.DIRT)
+                || belowState.is(Blocks.COARSE_DIRT)
+                || belowState.is(Blocks.PODZOL)
+                || belowState.is(Blocks.FARMLAND)
+                || belowState.is(Blocks.GRASS_BLOCK);
     }
 }
