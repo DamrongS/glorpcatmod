@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "damrongmcsglorpcatmod:block/mysterious_fungal_treat"
-    }
+    "": { "model": "damrongmcsglorpcatmod:block/mysterious_fungal_treat" }
   }
 }

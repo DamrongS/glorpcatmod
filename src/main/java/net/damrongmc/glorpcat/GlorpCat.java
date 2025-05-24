@@ -2,6 +2,8 @@ package net.damrongmc.glorpcat;
 
 import net.damrongmc.glorpcat.block.ModBlocks;
 import net.damrongmc.glorpcat.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -67,14 +69,15 @@ public class GlorpCat
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MYSTERIOUS_FUNGAL_TREAT.get(), RenderType.cutout());
     }
+
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModBlocks.MYSTERIOUSFUNGALTREAT);
+            event.accept(ModBlocks.MYSTERIOUS_FUNGAL_TREAT);
             event.accept(ModItems.GLORPCORE);
         }
     }

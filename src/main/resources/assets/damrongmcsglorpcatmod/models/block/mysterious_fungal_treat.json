@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "layer0": "damrongmcsglorpcatmod:block/mysterious_fungal_treat"
+    "cross": "damrongmcsglorpcatmod:block/mysterious_fungal_treat"
   }
 }
