@@ -3,6 +3,7 @@ package net.damrongmc.entity;
 import net.damrongmc.entity.custom.GlorpEntity;
 import net.damrongmc.glorpcat.GlorpCat;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
@@ -16,7 +17,9 @@ public class ModEntities {
 
     public static final Supplier<EntityType<GlorpEntity>> GLORP =
             ENTITY_TYPES.register("glorp", () -> EntityType.Builder.of(GlorpEntity::new, MobCategory.CREATURE)
-                    .sized(0.75f, 0.35f).build("glorp"));
+                    .sized(0.75f, 2f)  // Width and height of the entity
+                    .build(ResourceLocation.fromNamespaceAndPath(GlorpCat.MODID, "glorp").toString())
+            );
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

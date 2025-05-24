@@ -2,12 +2,14 @@ package net.damrongmc.glorpcat;
 
 import net.damrongmc.entity.ModEntities;
 import net.damrongmc.entity.client.GlorpRenderer;
+import net.damrongmc.entity.custom.GlorpEntity;
 import net.damrongmc.glorpcat.block.ModBlocks;
 import net.damrongmc.glorpcat.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -76,7 +78,6 @@ public class GlorpCat
     {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MYSTERIOUS_FUNGAL_TREAT.get(), RenderType.cutout());
     }
-
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)

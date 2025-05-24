@@ -22,9 +22,11 @@ public class ModItems {
     public static final DeferredItem<Item> MYSTERIOUS_FUNGAL_TREAT = ITEMS.register("mysterious_fungal_treat",
             () -> new ItemNameBlockItem(ModBlocks.MYSTERIOUS_FUNGAL_TREAT.get(), new Item.Properties()));
 
-    public static final DeferredItem<Item> GLORP_SPAWN_EGG = ITEMS.register("glorp_spawn_egg",
-            () -> new DeferredSpawnEggItem(ModEntities.GLORP, 0x31afaf, 0xffac00,
-                    new Item.Properties()));
+    public static final DeferredItem<Item> GLORP_SPAWN_EGG = ITEMS.register(
+            "glorp_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.GLORP, 0x5A8272, 0x43518A,
+                    new Item.Properties())
+    );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
