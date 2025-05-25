@@ -3,6 +3,7 @@ package net.damrongmc.entity.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.damrongmc.entity.custom.GlorpEntity;
 import net.damrongmc.glorpcat.GlorpCat;
+import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

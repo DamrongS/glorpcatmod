@@ -17,8 +17,7 @@ public class ModEntities {
 
     public static final Supplier<EntityType<GlorpEntity>> GLORP =
             ENTITY_TYPES.register("glorp", () -> EntityType.Builder.of(GlorpEntity::new, MobCategory.CREATURE)
-                    .sized(0.75f, 2f)  // Width and height of the entity
-                    .build(ResourceLocation.fromNamespaceAndPath(GlorpCat.MODID, "glorp").toString())
+                    .sized(0.5f, 1.2f).build("glorp")
             );
 
     public static void register(IEventBus eventBus) {

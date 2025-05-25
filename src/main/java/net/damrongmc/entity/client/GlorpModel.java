@@ -11,12 +11,11 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
 
 public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION =
-            new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(GlorpCat.MODID, "glorp"), "main");
-
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(GlorpCat.MODID, "glorp"), "main");
     private final ModelPart Body;
     private final ModelPart Head;
     private final ModelPart LAntenna;
@@ -180,6 +179,7 @@ public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
 
         this.animateWalk(GlorpAnimations.WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.animate(entity.idleAnimationState, GlorpAnimations.IDLE, ageInTicks, 1f);
+        this.animate(entity.sitAnimationState, GlorpAnimations.SIT, ageInTicks, 1f);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {
@@ -191,12 +191,12 @@ public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+    public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
         Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
 
     @Override
-    public ModelPart root() {
+    public @NotNull ModelPart root() {
         return Body;
     }
 }

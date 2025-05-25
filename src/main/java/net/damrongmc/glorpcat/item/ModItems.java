@@ -13,9 +13,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GlorpCat.MODID);
 
-    //public static final DeferredItem<Item> MYSTERIOUSFUNGALTREAT = ITEMS.register("mysterious_fungal_treat",
-            //()-> new Item(new Item.Properties()));
-
     public static final DeferredItem<Item> GLORPCORE = ITEMS.register("glorp_core",
             ()-> new Item(new Item.Properties()));
 
@@ -24,8 +21,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> GLORP_SPAWN_EGG = ITEMS.register(
             "glorp_spawn_egg",
-            () -> new DeferredSpawnEggItem(ModEntities.GLORP, 0x5A8272, 0x43518A,
-                    new Item.Properties())
+            () -> new DeferredSpawnEggItem(ModEntities.GLORP,0xffffff
+                    , 0xffffff, new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {
