@@ -79,7 +79,7 @@ public class MaidGlorpModel<T extends GlorpEntity> extends GlorpModel<T> {
     }
 
     public MaidGlorpModel(ModelPart body, ModelPart body2, ModelPart head, ModelPart lAntenna, ModelPart lJoint0, ModelPart lJoint1, ModelPart lJoint2, ModelPart lJoint3, ModelPart lJoint4, ModelPart rAntenna, ModelPart rJoint0, ModelPart rJoint1, ModelPart rJoint2, ModelPart rJoint3, ModelPart rJoint4, ModelPart lear, ModelPart rear, ModelPart tail, ModelPart joint0, ModelPart joint1, ModelPart joint2, ModelPart leftArm, ModelPart rightArm, ModelPart leftLeg, ModelPart leftToe, ModelPart rightLeg, ModelPart rIghtToe, ModelPart belly, ModelPart outfit) {
-        super(body);
+        super(outfit);
         Body = body;
         Body2 = body2;
         Head = head;
