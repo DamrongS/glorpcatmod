@@ -17,6 +17,7 @@ public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(GlorpCat.MODID, "glorp"), "main");
     private final ModelPart Body;
+    private final ModelPart Body2;
     private final ModelPart Head;
     private final ModelPart LAntenna;
     private final ModelPart LJoint0;
@@ -46,36 +47,38 @@ public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
 
     public GlorpModel(ModelPart root) {
         this.Body = root.getChild("Body");
-        this.Head = this.Body.getChild("Head");
+        this.Body2 = this.Body.getChild("Body2");
+        this.Head = this.Body2.getChild("Head");
         this.LAntenna = this.Head.getChild("LAntenna");
         this.LJoint0 = this.LAntenna.getChild("LJoint0");
-        this.LJoint1 = this.LAntenna.getChild("LJoint1");
-        this.LJoint2 = this.LAntenna.getChild("LJoint2");
-        this.LJoint3 = this.LAntenna.getChild("LJoint3");
-        this.LJoint4 = this.LAntenna.getChild("LJoint4");
+        this.LJoint1 = this.LJoint0.getChild("LJoint1");
+        this.LJoint2 = this.LJoint1.getChild("LJoint2");
+        this.LJoint3 = this.LJoint2.getChild("LJoint3");
+        this.LJoint4 = this.LJoint3.getChild("LJoint4");
         this.RAntenna = this.Head.getChild("RAntenna");
         this.RJoint0 = this.RAntenna.getChild("RJoint0");
-        this.RJoint1 = this.RAntenna.getChild("RJoint1");
-        this.RJoint2 = this.RAntenna.getChild("RJoint2");
-        this.RJoint3 = this.RAntenna.getChild("RJoint3");
-        this.RJoint4 = this.RAntenna.getChild("RJoint4");
+        this.RJoint1 = this.RJoint0.getChild("RJoint1");
+        this.RJoint2 = this.RJoint1.getChild("RJoint2");
+        this.RJoint3 = this.RJoint2.getChild("RJoint3");
+        this.RJoint4 = this.RJoint3.getChild("RJoint4");
         this.Lear = this.Head.getChild("Lear");
         this.Rear = this.Head.getChild("Rear");
-        this.Tail = this.Body.getChild("Tail");
+        this.Tail = this.Body2.getChild("Tail");
         this.Joint0 = this.Tail.getChild("Joint0");
-        this.Joint1 = this.Tail.getChild("Joint1");
-        this.Joint2 = this.Tail.getChild("Joint2");
-        this.LeftArm = this.Body.getChild("LeftArm");
-        this.RightArm = this.Body.getChild("RightArm");
-        this.LeftLeg = this.Body.getChild("LeftLeg");
+        this.Joint1 = this.Joint0.getChild("Joint1");
+        this.Joint2 = this.Joint1.getChild("Joint2");
+        this.LeftArm = this.Body2.getChild("LeftArm");
+        this.RightArm = this.Body2.getChild("RightArm");
+        this.LeftLeg = this.Body2.getChild("LeftLeg");
         this.LeftToe = this.LeftLeg.getChild("LeftToe");
-        this.RightLeg = this.Body.getChild("RightLeg");
+        this.RightLeg = this.Body2.getChild("RightLeg");
         this.RIghtToe = this.RightLeg.getChild("RIghtToe");
-        this.Belly = this.Body.getChild("Belly");
+        this.Belly = this.Body2.getChild("Belly");
     }
 
-    public GlorpModel(ModelPart body, ModelPart head, ModelPart lAntenna, ModelPart lJoint0, ModelPart lJoint1, ModelPart lJoint2, ModelPart lJoint3, ModelPart lJoint4, ModelPart rAntenna, ModelPart rJoint0, ModelPart rJoint1, ModelPart rJoint2, ModelPart rJoint3, ModelPart rJoint4, ModelPart lear, ModelPart rear, ModelPart tail, ModelPart joint0, ModelPart joint1, ModelPart joint2, ModelPart leftArm, ModelPart rightArm, ModelPart leftLeg, ModelPart leftToe, ModelPart rightLeg, ModelPart rIghtToe, ModelPart belly) {
+    public GlorpModel(ModelPart body, ModelPart body2, ModelPart head, ModelPart lAntenna, ModelPart lJoint0, ModelPart lJoint1, ModelPart lJoint2, ModelPart lJoint3, ModelPart lJoint4, ModelPart rAntenna, ModelPart rJoint0, ModelPart rJoint1, ModelPart rJoint2, ModelPart rJoint3, ModelPart rJoint4, ModelPart lear, ModelPart rear, ModelPart tail, ModelPart joint0, ModelPart joint1, ModelPart joint2, ModelPart leftArm, ModelPart rightArm, ModelPart leftLeg, ModelPart leftToe, ModelPart rightLeg, ModelPart rIghtToe, ModelPart belly) {
         Body = body;
+        Body2 = body2;
         Head = head;
         LAntenna = lAntenna;
         LJoint0 = lJoint0;
@@ -110,62 +113,62 @@ public class GlorpModel<T extends GlorpEntity> extends HierarchicalModel<T> {
 
         PartDefinition Body = partdefinition.addOrReplaceChild("Body", CubeListBuilder.create(), PartPose.offset(0.0F, 13.8333F, 0.1667F));
 
-        PartDefinition Head = Body.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(27, 28).addBox(-2.0F, -3.125F, -4.125F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+        PartDefinition Body2 = Body.addOrReplaceChild("Body2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+        PartDefinition Head = Body2.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(27, 28).addBox(-2.0F, -3.125F, -4.125F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 12).addBox(-3.0F, -5.125F, -3.125F, 6.0F, 5.0F, 6.0F, new CubeDeformation(0.0F))
                 .texOffs(24, 5).addBox(-4.0F, -3.125F, -2.125F, 1.0F, 3.0F, 4.0F, new CubeDeformation(0.0F))
                 .texOffs(24, 12).addBox(3.0F, -3.125F, -2.125F, 1.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.7083F, -0.0417F));
 
         PartDefinition LAntenna = Head.addOrReplaceChild("LAntenna", CubeListBuilder.create(), PartPose.offset(1.5F, -5.125F, 1.375F));
 
-        PartDefinition LJoint0 = LAntenna.addOrReplaceChild("LJoint0", CubeListBuilder.create().texOffs(16, 37).addBox(-1.0F, -2.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 1.0F, -0.5F));
+        PartDefinition LJoint0 = LAntenna.addOrReplaceChild("LJoint0", CubeListBuilder.create().texOffs(16, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition LJoint1 = LAntenna.addOrReplaceChild("LJoint1", CubeListBuilder.create().texOffs(20, 37).addBox(-1.0F, -3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 1.0F, -0.5F));
+        PartDefinition LJoint1 = LJoint0.addOrReplaceChild("LJoint1", CubeListBuilder.create().texOffs(20, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition LJoint2 = LAntenna.addOrReplaceChild("LJoint2", CubeListBuilder.create().texOffs(24, 37).addBox(-1.0F, -4.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 1.0F, -0.5F));
+        PartDefinition LJoint2 = LJoint1.addOrReplaceChild("LJoint2", CubeListBuilder.create().texOffs(24, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition LJoint3 = LAntenna.addOrReplaceChild("LJoint3", CubeListBuilder.create().texOffs(28, 37).addBox(-1.0F, -5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 1.0F, -0.5F));
+        PartDefinition LJoint3 = LJoint2.addOrReplaceChild("LJoint3", CubeListBuilder.create().texOffs(28, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition LJoint4 = LAntenna.addOrReplaceChild("LJoint4", CubeListBuilder.create().texOffs(34, 11).addBox(-1.0F, -6.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 1.0F, -0.5F));
+        PartDefinition LJoint4 = LJoint3.addOrReplaceChild("LJoint4", CubeListBuilder.create().texOffs(34, 11).addBox(-0.5F, -1.0F, -1.5F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
         PartDefinition RAntenna = Head.addOrReplaceChild("RAntenna", CubeListBuilder.create(), PartPose.offset(-1.5F, -5.125F, 1.375F));
 
         PartDefinition RJoint0 = RAntenna.addOrReplaceChild("RJoint0", CubeListBuilder.create().texOffs(4, 38).addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -0.5F, 0.0F));
 
-        PartDefinition RJoint1 = RAntenna.addOrReplaceChild("RJoint1", CubeListBuilder.create().texOffs(0, 38).addBox(-8.0F, -11.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(7.5F, 9.0F, -1.5F));
+        PartDefinition RJoint1 = RJoint0.addOrReplaceChild("RJoint1", CubeListBuilder.create().texOffs(0, 38).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -0.5F, 0.0F));
 
-        PartDefinition RJoint2 = RAntenna.addOrReplaceChild("RJoint2", CubeListBuilder.create().texOffs(36, 37).addBox(-8.0F, -12.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(7.5F, 9.0F, -1.5F));
+        PartDefinition RJoint2 = RJoint1.addOrReplaceChild("RJoint2", CubeListBuilder.create().texOffs(36, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition RJoint3 = RAntenna.addOrReplaceChild("RJoint3", CubeListBuilder.create().texOffs(32, 37).addBox(-8.0F, -13.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(7.5F, 9.0F, -1.5F));
+        PartDefinition RJoint3 = RJoint2.addOrReplaceChild("RJoint3", CubeListBuilder.create().texOffs(32, 37).addBox(-0.5F, -1.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition RJoint4 = RAntenna.addOrReplaceChild("RJoint4", CubeListBuilder.create().texOffs(34, 14).addBox(-8.0F, -14.0F, 0.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(7.5F, 9.0F, -1.5F));
+        PartDefinition RJoint4 = RJoint3.addOrReplaceChild("RJoint4", CubeListBuilder.create().texOffs(34, 14).addBox(-0.5F, -1.0F, -1.5F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
-        PartDefinition Lear = Head.addOrReplaceChild("Lear", CubeListBuilder.create(), PartPose.offset(2.0F, -4.125F, -0.125F));
-
-        PartDefinition Lear_r1 = Lear.addOrReplaceChild("Lear_r1", CubeListBuilder.create().texOffs(34, 5).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F));
+        PartDefinition Lear = Head.addOrReplaceChild("Lear", CubeListBuilder.create().texOffs(34, 5).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, -4.125F, -0.125F));
 
         PartDefinition Rear = Head.addOrReplaceChild("Rear", CubeListBuilder.create().texOffs(34, 8).addBox(-1.0F, -2.0F, 0.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -4.125F, -0.125F));
 
-        PartDefinition Tail = Body.addOrReplaceChild("Tail", CubeListBuilder.create(), PartPose.offset(0.0F, 5.1667F, 2.8333F));
+        PartDefinition Tail = Body2.addOrReplaceChild("Tail", CubeListBuilder.create(), PartPose.offset(0.0F, 5.1667F, 2.8333F));
 
         PartDefinition Joint0 = Tail.addOrReplaceChild("Joint0", CubeListBuilder.create().texOffs(24, 19).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition Joint1 = Tail.addOrReplaceChild("Joint1", CubeListBuilder.create().texOffs(32, 19).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 2.0F));
+        PartDefinition Joint1 = Joint0.addOrReplaceChild("Joint1", CubeListBuilder.create().texOffs(32, 19).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 2.0F));
 
-        PartDefinition Joint2 = Tail.addOrReplaceChild("Joint2", CubeListBuilder.create().texOffs(32, 31).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 4.0F));
+        PartDefinition Joint2 = Joint1.addOrReplaceChild("Joint2", CubeListBuilder.create().texOffs(32, 31).addBox(-1.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 2.0F));
 
-        PartDefinition LeftArm = Body.addOrReplaceChild("LeftArm", CubeListBuilder.create().texOffs(8, 30).addBox(0.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -0.8333F, -0.1667F));
+        PartDefinition LeftArm = Body2.addOrReplaceChild("LeftArm", CubeListBuilder.create().texOffs(8, 30).addBox(0.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -0.8333F, -0.1667F));
 
-        PartDefinition RightArm = Body.addOrReplaceChild("RightArm", CubeListBuilder.create().texOffs(0, 30).addBox(-2.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -0.8333F, -0.1667F));
+        PartDefinition RightArm = Body2.addOrReplaceChild("RightArm", CubeListBuilder.create().texOffs(0, 30).addBox(-2.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -0.8333F, -0.1667F));
 
-        PartDefinition LeftLeg = Body.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(24, 31).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 6.1667F, -0.1667F));
+        PartDefinition LeftLeg = Body2.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(24, 31).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 6.1667F, -0.1667F));
 
         PartDefinition LeftToe = LeftLeg.addOrReplaceChild("LeftToe", CubeListBuilder.create().texOffs(32, 35).addBox(-5.0F, 8.0F, -2.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -5.0F, 0.0F));
 
-        PartDefinition RightLeg = Body.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(16, 31).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 6.1667F, -0.1667F));
+        PartDefinition RightLeg = Body2.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(16, 31).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 6.1667F, -0.1667F));
 
         PartDefinition RIghtToe = RightLeg.addOrReplaceChild("RIghtToe", CubeListBuilder.create().texOffs(34, 17).addBox(-9.0F, 8.0F, -2.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(8.0F, -5.0F, 0.0F));
 
-        PartDefinition Belly = Body.addOrReplaceChild("Belly", CubeListBuilder.create().texOffs(24, 0).addBox(-2.0F, -8.8333F, -2.1667F, 4.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+        PartDefinition Belly = Body2.addOrReplaceChild("Belly", CubeListBuilder.create().texOffs(24, 0).addBox(-2.0F, -8.8333F, -2.1667F, 4.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 23).addBox(-3.0F, -7.8333F, -2.1667F, 6.0F, 2.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 0).addBox(-3.0F, -5.8333F, -3.1667F, 6.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 6.0F, 0.0F));
 
