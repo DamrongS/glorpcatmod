@@ -25,7 +25,8 @@ public class BonemealEventHandler {
         if (state.is(Blocks.GRASS_BLOCK)) {
 
             // Check for swamp biome
-            if (level instanceof ServerLevel serverLevel && serverLevel.getBiome(pos).is(Biomes.SWAMP)) {
+            if (level instanceof ServerLevel serverLevel && 
+    (serverLevel.getBiome(pos).is(Biomes.SWAMP) || serverLevel.getBiome(pos).is(Biomes.MANGROVE_SWAMP))) {
 
                 // Roll chance (e.g., 20% chance)
                 if (serverLevel.random.nextFloat() < 0.80f) {
