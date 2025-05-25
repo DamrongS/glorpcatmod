@@ -28,18 +28,16 @@ public class GlorpRenderer extends MobRenderer<GlorpEntity, GlorpModel<GlorpEnti
             });
 
     private final GlorpModel<GlorpEntity> normalModel;
-    private final GlorpModel<GlorpEntity> maidModel;
-    private final GlorpModel<GlorpEntity> fatModel;
-    private final EntityRendererProvider.Context context;
+    private final MaidGlorpModel<GlorpEntity> maidModel;
+    private final FatGlorpModel<GlorpEntity> fatModel;
 
     public GlorpRenderer(EntityRendererProvider.Context context) {
         super(context, new GlorpModel<>(context.bakeLayer(GlorpModel.LAYER_LOCATION)), 0.25f);
-        this.context = context;
 
         // Cache baked models once instead of baking every frame
         this.normalModel = new GlorpModel<>(context.bakeLayer(GlorpModel.LAYER_LOCATION));
-        this.maidModel = new GlorpModel<>(context.bakeLayer(GlorpModel.LAYER_LOCATION));
-        this.fatModel = new GlorpModel<>(context.bakeLayer(FatGlorpModel.LAYER_LOCATION));
+        this.maidModel = new MaidGlorpModel<>(context.bakeLayer(MaidGlorpModel.LAYER_LOCATION));
+        this.fatModel = new FatGlorpModel<>(context.bakeLayer(FatGlorpModel.LAYER_LOCATION));
     }
 
     @Override
@@ -51,21 +49,17 @@ public class GlorpRenderer extends MobRenderer<GlorpEntity, GlorpModel<GlorpEnti
     public void render(GlorpEntity entity, float entityYaw, float partialTicks, PoseStack poseStack,
                        MultiBufferSource buffer, int packedLight) {
 
-        // Switch model based on variant
-        switch (entity.getVariant()) {
-            case NORMAL -> this.model = normalModel;
-            case FAT -> this.model = fatModel;
-            case MAID -> this.model = maidModel;
+        if(entity.getVariant() == GlorpVariant.NORMAL) {
+            this.model = normalModel;
+        } else if(entity.getVariant() == GlorpVariant.FAT) {
+            this.model = fatModel;
+        } else if(entity.getVariant() == GlorpVariant.MAID) {
+            this.model = maidModel;
         }
 
         // Scale if baby
         if (entity.isBaby()) {
             poseStack.scale(0.45f, 0.45f, 0.45f);
-        }
-
-        // Sitting animation
-        if (entity.isSitting()) {
-            entity.sitAnimationState.SIT(entity.tickCount);
         }
 
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);

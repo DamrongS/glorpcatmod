@@ -5,8 +5,9 @@ import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 
-public class GlorpAnimations {
-    public static final AnimationDefinition SIT = AnimationDefinition.Builder.withLength(0.25f)
+public class MaidGlorpAnimations {
+
+    public static final AnimationDefinition SIT = AnimationDefinition.Builder.withLength(0.2916767f)
             .addAnimation("Body",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
@@ -23,29 +24,29 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -3f, 0f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -1f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Joint0",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -3f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR)))
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Joint0",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-15f, 0f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.08343333f, KeyframeAnimations.degreeVec(15f, 0f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(0.08333f, KeyframeAnimations.degreeVec(15f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.25f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR)))
+                                    AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Joint1",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.08343333f, KeyframeAnimations.degreeVec(-33.33f, 0f, 0f),
+                            new Keyframe(0.08333f, KeyframeAnimations.degreeVec(-33.33f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.16766666f, KeyframeAnimations.degreeVec(17.08f, 0f, 0f),
+                            new Keyframe(0.16667f, KeyframeAnimations.degreeVec(17.08f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.25f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
@@ -53,9 +54,9 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.08343333f, KeyframeAnimations.degreeVec(-30f, 0f, 0f),
+                            new Keyframe(0.08333f, KeyframeAnimations.degreeVec(-30f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.16766666f, KeyframeAnimations.degreeVec(18.75f, 0f, 0f),
+                            new Keyframe(0.16667f, KeyframeAnimations.degreeVec(18.75f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.25f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
@@ -63,7 +64,7 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -3f, 0f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("LeftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -75,7 +76,7 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -3f, 0f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("RightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -87,7 +88,7 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, -3f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, 0f, -3f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("LeftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -101,7 +102,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.125f, KeyframeAnimations.posVec(0f, 0f, -1.48f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, -3f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, 0f, -3f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("RightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -115,7 +116,13 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -3f, 0f),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
+            .addAnimation("Body2",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(0.25f, KeyframeAnimations.posVec(0f, -2f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM))).build();
     public static final AnimationDefinition WALK = AnimationDefinition.Builder.withLength(0.5f).looping()
             .addAnimation("Head",
@@ -276,7 +283,7 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 15f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.3433333f, KeyframeAnimations.degreeVec(0f, 0f, -25f),
+                            new Keyframe(0.33333f, KeyframeAnimations.degreeVec(0f, 0f, -25f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 0f, 15f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -284,7 +291,7 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 10f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.3433333f, KeyframeAnimations.degreeVec(0f, 0f, -30f),
+                            new Keyframe(0.33333f, KeyframeAnimations.degreeVec(0f, 0f, -30f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 0f, 10f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -323,6 +330,14 @@ public class GlorpAnimations {
                             new Keyframe(0.375f, KeyframeAnimations.degreeVec(10.33f, -44.54f, -7.18f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 22.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
+            .addAnimation("Body2",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 7.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(0.25f, KeyframeAnimations.degreeVec(0f, -12.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 7.5f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM))).build();
     public static final AnimationDefinition IDLE = AnimationDefinition.Builder.withLength(3f).looping()
             .addAnimation("Head",
@@ -339,15 +354,15 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
-                            new Keyframe(0f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(-10f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2.25f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(3f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
+                            new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Joint0",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -363,13 +378,13 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(17.41f, 43.66f, 12.21f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.3433333f, KeyframeAnimations.degreeVec(25.65f, 59.71f, 22.55f),
+                            new Keyframe(0.33333f, KeyframeAnimations.degreeVec(25.65f, 59.71f, 22.55f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(1.5f, KeyframeAnimations.degreeVec(14.73f, 31.64f, 7.85f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2.25f, KeyframeAnimations.degreeVec(13.7f, -21.92f, -5.22f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.5416765f, KeyframeAnimations.degreeVec(23.36f, -48.88f, -17.43f),
+                            new Keyframe(2.54167f, KeyframeAnimations.degreeVec(23.36f, -48.88f, -17.43f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(17.41f, 43.66f, 12.21f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -377,13 +392,13 @@ public class GlorpAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(28.31f, 43.85f, 20.47f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(0.3433333f, KeyframeAnimations.degreeVec(38.31f, 56.15f, 33.31f),
+                            new Keyframe(0.33333f, KeyframeAnimations.degreeVec(38.31f, 56.15f, 33.31f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(1.5f, KeyframeAnimations.degreeVec(24.13f, 32.58f, 13.55f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2.25f, KeyframeAnimations.degreeVec(21.66f, -21.06f, -8.13f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.5416765f, KeyframeAnimations.degreeVec(26.94f, -25.28f, -11.14f),
+                            new Keyframe(2.54167f, KeyframeAnimations.degreeVec(26.94f, -25.28f, -11.14f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(28.31f, 43.85f, 20.47f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -403,7 +418,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(1.5f, KeyframeAnimations.degreeVec(-3.61f, -27.25f, -8.44f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(1.9583433f, KeyframeAnimations.degreeVec(-23.77f, -27.25f, -8.44f),
+                            new Keyframe(1.95833f, KeyframeAnimations.degreeVec(-23.77f, -27.25f, -8.44f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(3.89f, -27.25f, -8.44f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -421,25 +436,49 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(19.5f, 14.87f, 7.76f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(1.9583433f, KeyframeAnimations.degreeVec(-30.22f, 14.87f, 7.76f),
+                            new Keyframe(1.95833f, KeyframeAnimations.degreeVec(-30.22f, 14.87f, 7.76f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(2f, 14.87f, 7.76f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("LeftLeg",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(1.5f, KeyframeAnimations.posVec(0f, 0f, -1f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(3f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
+            .addAnimation("LeftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
-                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, -20f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR)))
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(2.5f, -20f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(-6.25f, -20f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(3f, KeyframeAnimations.degreeVec(2.5f, -20f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
+            .addAnimation("RightLeg",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(1.5f, KeyframeAnimations.posVec(0f, 0f, -1f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(3f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("RightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
-                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 22.5f, 0f),
-                                    AnimationChannel.Interpolations.LINEAR)))
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(2.5f, 22.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(-6.25f, 22.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(3f, KeyframeAnimations.degreeVec(2.5f, 22.5f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("Belly",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
-                            new Keyframe(0f, KeyframeAnimations.degreeVec(-5f, 0f, 0f),
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(7.5f, 0f, 0f),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(3f, KeyframeAnimations.degreeVec(-5f, 0f, 0f),
+                            new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
             .addAnimation("LJoint0",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -499,7 +538,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.6766665f, KeyframeAnimations.degreeVec(17.5f, 0f, 0f),
+                            new Keyframe(2.66667f, KeyframeAnimations.degreeVec(17.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -511,7 +550,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(20f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.6766665f, KeyframeAnimations.degreeVec(12.5f, 0f, 0f),
+                            new Keyframe(2.66667f, KeyframeAnimations.degreeVec(12.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -523,7 +562,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(17.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.6766665f, KeyframeAnimations.degreeVec(7.5f, 0f, 0f),
+                            new Keyframe(2.66667f, KeyframeAnimations.degreeVec(7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -535,7 +574,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(22.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.6766665f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
+                            new Keyframe(2.66667f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -547,7 +586,7 @@ public class GlorpAnimations {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
-                            new Keyframe(2.6766665f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
+                            new Keyframe(2.66667f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM)))
@@ -570,5 +609,13 @@ public class GlorpAnimations {
                             new Keyframe(2.25f, KeyframeAnimations.degreeVec(40f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(22.5f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM)))
+            .addAnimation("Body2",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(-2.5f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(5f, 0f, 0f),
+                                    AnimationChannel.Interpolations.CATMULLROM),
+                            new Keyframe(3f, KeyframeAnimations.degreeVec(-2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM))).build();
 }

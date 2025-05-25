@@ -188,9 +188,8 @@ public class GlorpEntity extends TamableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        GlorpEntity baby = ModEntities.GLORP.get().create(level);
-        assert baby != null;
-        baby.setVariant(this.getVariant());
+        GlorpVariant variant = Util.getRandom(GlorpVariant.values(), this.random);
+        this.setVariant(variant);
         return ModEntities.GLORP.get().create(level);
     }
 
