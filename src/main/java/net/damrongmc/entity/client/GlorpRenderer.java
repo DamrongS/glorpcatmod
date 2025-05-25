@@ -28,16 +28,15 @@ public class GlorpRenderer extends MobRenderer<GlorpEntity, GlorpModel<GlorpEnti
             });
 
     private final GlorpModel<GlorpEntity> normalModel;
-    private final MaidGlorpModel<GlorpEntity> maidModel;
     private final FatGlorpModel<GlorpEntity> fatModel;
+    private final MaidGlorpModel<GlorpEntity> maidModel;
 
     public GlorpRenderer(EntityRendererProvider.Context context) {
         super(context, new GlorpModel<>(context.bakeLayer(GlorpModel.LAYER_LOCATION)), 0.25f);
 
-        // Cache baked models once instead of baking every frame
         this.normalModel = new GlorpModel<>(context.bakeLayer(GlorpModel.LAYER_LOCATION));
-        this.maidModel = new MaidGlorpModel<>(context.bakeLayer(MaidGlorpModel.LAYER_LOCATION));
         this.fatModel = new FatGlorpModel<>(context.bakeLayer(FatGlorpModel.LAYER_LOCATION));
+        this.maidModel = new MaidGlorpModel<>(context.bakeLayer(MaidGlorpModel.LAYER_LOCATION));
     }
 
     @Override
